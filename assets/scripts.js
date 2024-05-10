@@ -11,19 +11,25 @@ var paymentInfo = {
     }
 };
 
-var paymentMethodsContainer = document.getElementById('payment-methods');
-for (var method in paymentInfo) {
-    if (paymentInfo.hasOwnProperty(method)) {
-        var button = document.createElement('button');
-        button.textContent = paymentInfo[method].buttonText;
-        button.onclick = (function(method) {
-            return function() {
-                togglePayment(method);
-            };
-        })(method);
-        paymentMethodsContainer.appendChild(button);
+function generatePaymentButtons() {
+    var paymentMethodsContainer = document.getElementById('payment-methods');
+    paymentMethodsContainer.innerHTML = ''; 
+    for (var method in paymentInfo) {
+        if (paymentInfo.hasOwnProperty(method)) {
+            var button = document.createElement('button');
+            button.textContent = paymentInfo[method].buttonText;
+            button.onclick = (function(method) {
+                return function() {
+                    togglePayment(method);
+                };
+            })(method);
+            paymentMethodsContainer.appendChild(button);
+        }
     }
 }
+
+
+generatePaymentButtons();
 
 function togglePayment(method) {
     document.getElementById('payment-image').src = paymentInfo[method].imagePath;
