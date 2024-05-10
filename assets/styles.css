@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -9,38 +10,50 @@ h1 {
     font-weight: bold;
 }
 
-.thank-you {
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.payment-code {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.payment-code > div {
+.payment-code-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-method-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.payment-method-buttons button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; 
+}
+
+.payment-method-buttons button:hover {
+    background-color: #45a049;
+}
+
+.payment-code-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .payment-code img {
-    width: 400px;
-    height: 600px;
-    margin-bottom: 30px;
+    max-width: 50%; 
+    height: auto;
+    margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border: 2px solid #f0f0f0;
     border-radius: 10px;
-}
-
-@media screen and (max-width: 1000px) {
-    .payment-code img {
-        width: 200px;
-        height: 300px;
-    }
 }
 
 .download-link {
@@ -51,6 +64,7 @@ h1 {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px; 
 }
 
 .download-link:hover {
@@ -59,4 +73,30 @@ h1 {
 
 .download-icon {
     margin-right: 8px;
+}
+
+.thank-you-text {
+    max-width: 600px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.thank-you-text p {
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .payment-code img {
+        max-width: 50%; 
+    }
+    
+    .payment-method-buttons {
+        flex-wrap: wrap; 
+    }
+
+    .payment-method-buttons button {
+        margin: 5px; 
+    }
 }

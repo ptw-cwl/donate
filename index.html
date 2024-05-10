@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/styles.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>赞赏</title>
-	<link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
 </head>
 <body>
 <header>
     <h1>赞赏</h1>
-    <p class="thank-you">感谢老板的慷慨支持！</p>
 </header>
 
-<div class="payment-code">
-    <div>
-        <img src="assets/img/wechat_payment_code.jpg" alt="微信支付二维码">
-        <a class="download-link" href="#" onclick="downloadImage('assets/img/wechat_payment_code.jpg')">
-            <i class="fas fa-download download-icon"></i>点击下载微信支付二维码
-        </a>
+<div class="payment-code-container">
+    <div class="thank-you-text">
+        <p>诚挚致谢！</p>
+        <p>非常感谢你的认可和支持！</p>
+        <p>期待未来我们共同创造更美好的明天！</p>
     </div>
-    <div>
-        <img src="assets/img/alipay_payment_code.jpg" alt="支付宝支付二维码">
-        <a class="download-link" href="#" onclick="downloadImage('assets/img/alipay_payment_code.jpg')">
-            <i class="fas fa-download download-icon"></i>点击下载支付宝支付二维码
+    <div class="payment-code-wrapper">
+        <div class="payment-method-buttons" id="payment-methods">
+        </div>
+        <div class="payment-code">
+            <img id="payment-image" src="assets/img/wechat_payment_code.jpg" alt="支付二维码">
+        </div>
+        <a id="download-link" class="download-link" href="#" onclick="downloadImage('assets/img/wechat_payment_code.jpg')">
+            <i class="fas fa-download download-icon"></i>点击下载微信支付二维码
         </a>
     </div>
 </div>
 
-<script type="text/javascript"  src="assets/scripts.js"></script>
+<script src="assets/script.js"></script>
+
 </body>
 </html>
